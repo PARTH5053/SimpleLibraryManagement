@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{base}">
+<head>
+    <title layout:fragment="title">
+        LibraryManagement
+        |
+        Add Publisher</title>
+</head>
+
+<body>
+<section layout:fragment="section">
+    <div class="container my-2">
+        <div class="card">
+            <div class="card-body">
+                <form action="#" th:action="@{/save-publisher}" th:object="${publisher}" method="post">
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="name" class="col-form-label">Publisher Name</label>
+                            <input type="text" th:field="*{name}" class="form-control" id="name" placeholder="Publisher Name">
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+</body>
+</html>
